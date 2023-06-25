@@ -5,4 +5,8 @@ module com.example.eurotier {
 
     opens com.example.eurotier to javafx.fxml;
     exports com.example.eurotier;
+    exports com.example.eurotier.Controllers;
+    opens com.example.eurotier.Controllers to javafx.fxml;
+    exports com.example.eurotier.Flagger;
+    opens com.example.eurotier.Flagger to javafx.fxml;
 }

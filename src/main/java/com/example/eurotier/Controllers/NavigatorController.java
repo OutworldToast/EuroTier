@@ -1,9 +1,9 @@
-package com.example.eurotier;
+package com.example.eurotier.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class NavigatorController {
     @FXML
     private Label welcomeText;
 
