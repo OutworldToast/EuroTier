@@ -5,6 +5,7 @@ public class TierReturnType {
     public static final TierReturnType SUCCESS = new TierReturnType("Success");
     public static final TierReturnType ERROR = new TierReturnType("Error");
     public static final TierReturnType NOTFOUND = new TierReturnType("Not found");
+    public static final TierReturnType EXISTS = new TierReturnType("Already exists");
 
     public String label;
 
@@ -12,7 +13,4 @@ public class TierReturnType {
         this.label = label;
     }
 
-    public String getLabel() {
-        return label;
-    }
 }

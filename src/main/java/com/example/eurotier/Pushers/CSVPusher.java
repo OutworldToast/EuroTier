@@ -4,7 +4,12 @@ import com.example.eurotier.TierList.TierList;
 
 public class CSVPusher implements AbstractPusher{
     @Override
-    public void push(TierList tierList) {
+    public boolean push(TierList tierList) {
+        return false;
+    }
 
+    @Override
+    public String returnOnFailure() {
+        return null;
     }
 }

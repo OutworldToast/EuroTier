@@ -14,12 +14,16 @@ public class Row {
         this.label = label;
     }
 
-    public void addCountry(String country) {
-        countries.add(country);
+    public ArrayList<String> getCountries() {
+        return countries;
     }
 
-    public void removeCountry(String country) {
-        countries.remove(country);
+    public boolean addCountry(String country) {
+        return countries.add(country);
+    }
+
+    public boolean removeCountry(String country) {
+        return countries.remove(country);
     }
 
     public boolean hasCountry(String sought) {
