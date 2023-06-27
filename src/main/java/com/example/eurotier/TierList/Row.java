@@ -6,6 +6,10 @@ public class Row {
     private String label;
     private final ArrayList<String> countries = new ArrayList<>();
 
+    public Row(String label) {
+        this.label = label;
+    }
+
     public String getLabel() {
         return label;
     }

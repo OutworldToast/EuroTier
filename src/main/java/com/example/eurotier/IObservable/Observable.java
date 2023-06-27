@@ -1,11 +1,12 @@
 package com.example.eurotier.IObservable;
 
-import com.example.eurotier.TierList.TierReturnType;
+import java.util.ArrayList;
+import java.util.Map;
 
 public interface Observable {
 
-    public void addListener(Observer observer);
-    public void removeListener(Observer observer);
-    public void alert();
-
+    Map<String, ArrayList<Observer>> getListeners();
+    void addListener(Observer observer, String eventType);
+    void removeListener(Observer observer, String eventType);
+    void alert(String eventType, Object toBePushed);
 }

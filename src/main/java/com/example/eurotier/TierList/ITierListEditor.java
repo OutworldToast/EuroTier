@@ -1,8 +1,8 @@
 package com.example.eurotier.TierList;
 
 public interface ITierListEditor {
-    public TierReturnType addItem(Row row, String item);
-    public TierReturnType removeItem(Row row, String item);
-    public TierReturnType changeName(Row row, String name);
-    public TierReturnType commit();
+    TierReturnType addItem(Row row, String item);
+    TierReturnType removeItem(Row row, String item);
+    TierReturnType changeName(Row row, String name);
+    TierReturnType commit(String eventType);
 }

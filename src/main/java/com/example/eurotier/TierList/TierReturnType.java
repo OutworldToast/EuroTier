@@ -7,10 +7,13 @@ public class TierReturnType {
     public static final TierReturnType NOTFOUND = new TierReturnType("Not found");
     public static final TierReturnType EXISTS = new TierReturnType("Already exists");
 
-    public String label;
+    private String label;
 
-    public TierReturnType(String label) {
+    private TierReturnType(String label) {
         this.label = label;
     }
 
+    public String getLabel() {
+        return label;
+    }
 }

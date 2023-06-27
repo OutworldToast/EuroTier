@@ -9,7 +9,7 @@ public class RowTest {
 
     @Test
     public void addCountryTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String expected = "NL";
 
         assertTrue(row.addCountry(expected));
@@ -21,7 +21,7 @@ public class RowTest {
 
     @Test
     public void addCountryDoubleTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String country = "NL";
 
         row.addCountry(country);
@@ -35,7 +35,7 @@ public class RowTest {
 
     @Test
     public void removeCountryExistsTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String country = "NL";
 
         assertTrue(row.addCountry(country));
@@ -44,7 +44,7 @@ public class RowTest {
 
     @Test
     public void removeCountryNotExistsTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String country = "NL";
 
         assertFalse(row.removeCountry(country));
@@ -52,7 +52,7 @@ public class RowTest {
 
     @Test
     public void hasCountryTrueTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String country = "NL";
 
         boolean shouldBeTrue = row.addCountry(country);
@@ -63,7 +63,7 @@ public class RowTest {
 
     @Test
     public void hasCountryFalseTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String country = "NL";
 
         assertFalse(row.hasCountry(country));
@@ -71,7 +71,7 @@ public class RowTest {
 
     @Test
     public void hasCountryLowercaseTest(){
-        Row row = new Row();
+        Row row = new Row("test");
         String countryLower = "nl";
         String countryUpper = "NL";
 
