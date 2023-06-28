@@ -2,27 +2,35 @@ package com.example.eurotier.Flagger;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Flagger implements IFlagger{
 
     private Map<String, String> flagSet;
 
     public Flagger() {
+        this(false);
+    }
 
-        String filePath = createFilePath();
-        if (filePath != null) {
-            flagSet = createFlagSet(new File(filePath));
-        } else {
-            System.out.println("Houston, we have a problem");
-            //TODO: consider options
+    public Flagger(boolean isCustom) {
+        if (!isCustom) {
+            String fileName = createFileName();
+
+            try {
+                ClassLoader classLoader = getClass().getClassLoader();
+                File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+                flagSet = createFlagSet(file);
+            } catch (NullPointerException e) {
+                System.out.println("Houston, we have a problem");
+                //TODO: consider options
+            }
         }
     }
 
     //useful for possible extension
     //override this method with a different filepath for new types of flaggers
-    public String createFilePath() {
+    public String createFileName() {
         return null;
     }
 
