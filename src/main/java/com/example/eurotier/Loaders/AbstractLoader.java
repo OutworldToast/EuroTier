@@ -15,9 +15,9 @@ public abstract class AbstractLoader {
         return generate(source);
     }
 
-    public abstract Map<String, ArrayList<String>> parse(File file);
-    public abstract TierList generate(Map<String, ArrayList<String>> source);
-    public boolean validate(String key) {
+    abstract Map<String, ArrayList<String>> parse(File file);
+    abstract TierList generate(Map<String, ArrayList<String>> source);
+    boolean validate(String key) {
         IFlagger flagger = new Flagger();
         return flagger.hasKey(key);
     }

@@ -3,7 +3,7 @@ package com.example.eurotier.TierList;
 import java.util.ArrayList;
 
 
-public class TierList implements ITierListEditor {
+public class TierList implements ITierList {
 
     private final EventManager eventManager = new EventManager();
     private final ArrayList<Row> rows = new ArrayList<>();
