@@ -1,6 +1,7 @@
 package com.example.eurotier.TierList;
 
 public interface ITierListEditor {
+    Row getRow(String label);
     TierReturnType addItem(Row row, String item);
     TierReturnType removeItem(Row row, String item);
     TierReturnType changeName(Row row, String name);
