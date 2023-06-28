@@ -1,15 +1,18 @@
 package com.example.eurotier.Pushers;
 
+import com.example.eurotier.TierList.Row;
 import com.example.eurotier.TierList.TierList;
 
 public class ExcelPusher extends AbstractPusher{
+
     @Override
-    public boolean push(TierList tierList) {
-        return false;
+    Object locate(String label) {
+        return null;
     }
 
     @Override
-    public String returnOnFailure() {
-        return null;
+    boolean write(Object location, Row row) {
+        return false;
     }
+
 }
