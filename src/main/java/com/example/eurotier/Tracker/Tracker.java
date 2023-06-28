@@ -19,11 +19,14 @@ public class Tracker {
         int upperLimit = 2023;
 
         for (int i = lowerLimit; i <= upperLimit; i++) {
-            createList(String.valueOf(i));
+            lists.add(createList(String.valueOf(i)));
         }
 
     }
 
+    public ArrayList<TierList> getLists() {
+        return lists;
+    }
     public static void setCurrentList(TierList tierList) {
         currentList = tierList;
     }
