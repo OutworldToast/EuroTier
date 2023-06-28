@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class TierList implements ITierListEditor {
 
-    EventManager eventManager = new EventManager();
+    private final EventManager eventManager = new EventManager();
     private final ArrayList<Row> rows = new ArrayList<>();
     private String label;
 
@@ -31,6 +31,10 @@ public class TierList implements ITierListEditor {
 
     public ArrayList<Row> getRows() {
         return rows;
+    }
+
+    public EventManager getEventManager() {
+        return eventManager;
     }
 
     public TierReturnType createRows() {
