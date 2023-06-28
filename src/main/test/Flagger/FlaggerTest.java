@@ -3,9 +3,9 @@ package Flagger;
 import com.example.eurotier.Flagger.Flagger;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.Set;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,7 +25,8 @@ public class FlaggerTest {
 
     @Test
     public void getValueExistsTest() {
-        Flagger flagger = new Flagger();
+        Flagger flagger = new Flagger(true);
+        flagger.getFlagSet().put("NLD", "FlagNLD.png");
 
         String expected = "FlagNLD.png";
 
@@ -37,7 +38,7 @@ public class FlaggerTest {
 
     @Test
     public void getValueNotExistsTest() {
-        Flagger flagger = new Flagger();
+        Flagger flagger = new Flagger(true);
 
         String key = "dasnll";
         String actual = flagger.getValue(key);
@@ -48,6 +49,7 @@ public class FlaggerTest {
     @Test
     public void hasKeyExistsTest() {
         Flagger flagger = new Flagger();
+        flagger.getFlagSet().put("NLD", "FlagNLD.png");
 
         String key = "NLD";
         boolean result = flagger.hasKey(key);
@@ -68,10 +70,12 @@ public class FlaggerTest {
     @Test
     public void getKeySetTest() {
         Flagger flagger = new Flagger();
+        flagger.getFlagSet().put("ARM", null);
+        flagger.getFlagSet().put("NLD", null);
 
-        ArrayList<String> keySet = flagger.getKeySet();
+        Set<String> keySet = flagger.getKeySet();
 
-        assertFalse(keySet.isEmpty());
+        assertEquals(2 ,keySet.size());
 
         assertTrue(keySet.contains("NLD"));
         assertTrue(keySet.contains("ARM"));
