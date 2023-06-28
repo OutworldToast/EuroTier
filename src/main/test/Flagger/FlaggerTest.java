@@ -3,7 +3,10 @@ package Flagger;
 import com.example.eurotier.Flagger.Flagger;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.net.URL;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -12,15 +15,44 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FlaggerTest {
 
     @Test
+    public void constructorTest() {
+        Flagger flagger = new Flagger();
+
+        String key = "NLD";
+
+        assertFalse(flagger.getKeySet().isEmpty());
+        assertTrue(flagger.hasKey(key));
+        assertEquals("FlagNLD.png", flagger.getValue(key));
+
+    }
+
+    @Test
     public void createFlagSetTest() {
 
-        //TODO: design these tests
+//        Flagger flagger = new Flagger(true);
+//
+//        URL url = getClass().getResource("flags.txt");  <--- makes the test fail
+//        File file = new File(Objects.requireNonNull(url).getPath());
+//
+//        Map<String, String> resultSet = flagger.createFlagSet(file);
+//
+//        String expected = "FlagNLD.png";
+//        String actual = resultSet.get("NLD");
+//
+//        assertFalse(resultSet.containsKey("NOTEXISTS"));
+//        assertEquals(expected, actual);
+
+        //TODO: fix this test (cant find file)
 
     }
 
     @Test
     public void createFlagSetNotExistsTest() {
+        Flagger flagger = new Flagger(true);
 
+        Map<String, String> resultSet = flagger.createFlagSet(null);
+
+        assertTrue(resultSet.containsKey("NOTEXISTS"));
     }
 
     @Test
@@ -48,7 +80,7 @@ public class FlaggerTest {
 
     @Test
     public void hasKeyExistsTest() {
-        Flagger flagger = new Flagger();
+        Flagger flagger = new Flagger(true);
         flagger.getFlagSet().put("NLD", "FlagNLD.png");
 
         String key = "NLD";
@@ -59,7 +91,7 @@ public class FlaggerTest {
 
     @Test
     public void hasKeyNotExistsTest() {
-        Flagger flagger = new Flagger();
+        Flagger flagger = new Flagger(true);
 
         String key = "dasnll";
         boolean result = flagger.hasKey(key);
@@ -69,7 +101,7 @@ public class FlaggerTest {
 
     @Test
     public void getKeySetTest() {
-        Flagger flagger = new Flagger();
+        Flagger flagger = new Flagger(true);
         flagger.getFlagSet().put("ARM", null);
         flagger.getFlagSet().put("NLD", null);
 
