@@ -22,7 +22,7 @@ public class FlaggerTest {
 
         assertFalse(flagger.getKeySet().isEmpty());
         assertTrue(flagger.hasKey(key));
-        assertEquals("FlagNLD.png", flagger.getValue(key));
+        assertEquals("flags/FlagNLD.png", flagger.getValue(key));
 
     }
 

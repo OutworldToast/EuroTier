@@ -1,4 +1,6 @@
 package com.example.eurotier.Controllers;
 
-public class TierListPageController {
+import com.example.eurotier.Tracker.hasTracker;
+
+public class TierListPageController implements hasTracker {
 }

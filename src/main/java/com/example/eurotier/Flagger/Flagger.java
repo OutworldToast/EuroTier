@@ -50,7 +50,7 @@ public class Flagger implements IFlagger{
             String key;
             do {
                 key = reader.readLine();
-                String value = "Flag" + key + ".png";
+                String value = "flags/Flag" + key + ".png";
 
                 result.put(key, value);
             } while (key != null && !key.equals(""));

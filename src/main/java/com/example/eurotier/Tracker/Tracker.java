@@ -10,12 +10,12 @@ import java.util.ArrayList;
 
 public class Tracker {
 
-    private static ITierList currentList;
+    private ITierList currentList;
     private final ArrayList<TierList> lists = new ArrayList<>();
 
     public Tracker() {
 
-        int lowerLimit = 1959;
+        int lowerLimit = 1956;
         int upperLimit = 2023;
 
         for (int i = lowerLimit; i <= upperLimit; i++) {
@@ -27,7 +27,7 @@ public class Tracker {
     public ArrayList<TierList> getLists() {
         return lists;
     }
-    public static void setCurrentList(TierList tierList) {
+    public void setCurrentList(TierList tierList) {
         currentList = tierList;
     }
 
